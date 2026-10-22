@@ -15,6 +15,7 @@ test('all cases require sequential contradictions, found evidence and fresh stag
  assert.equal(snapshot(g,demo).stages,undefined);
  for(let index=0;index<story.stages.length;index++){
  const stage=story.stages[index],before=snapshot(g,demo);
+ const context=detectiveContext(g);assert.ok(context.includes(g.story.narrative.moods[index]));for(const futureMood of g.story.narrative.moods.slice(index+1))assert.ok(!context.includes(futureMood));
  const spoken=g.messages.findLast(m=>m.testimonyStage===index);assert.ok(spoken);for(const statement of stage.statements)assert.equal(spoken.text.split(statement.text).length-1,1);
  assert.equal(before.testimony.statements.length,3);assert.ok(before.testimony.statements.every(s=>!('press'in s)&&!('lie'in s)));
  assert.throws(()=>press(g,index+1,stage.foundBy));

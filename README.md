@@ -120,7 +120,7 @@ Raon 외 제공자는 콘솔에서 사용할 수 있는 **텍스트/채팅 모�
 ## English / itch.io (0.2.1)
 
 - English edition: http://127.0.0.1:4173/en/ (language switch in the header).
-- `npm run package:itch` builds `dist/unfiled-0.2.1-local.zip`, without API keys.
+- `npm run package:itch` builds `dist/unfiled-0.2.2-local.zip`, without API keys.
 - Upload as a downloadable project, not an HTML5 embed. Node.js 22.9+ is required.
 - English page copy and upload steps: `ITCH_PAGE_EN.md`. Launch instructions: `START_HERE.txt`.
 - Regenerate English interface assets with `npm run build:locales` after editing UI translations.

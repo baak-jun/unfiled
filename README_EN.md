@@ -2,7 +2,7 @@
 
 A quiet room. A witness who keeps changing their story. One more lie beneath every admission.
 
-**Version 0.2.1 · English / 한국어 · Local web game**
+**Version 0.2.2 · English / 한국어 · Local web game**
 
 ## Start playing
 
@@ -67,3 +67,7 @@ Development checks: `npm test`. Regenerate English interface assets after editin
 ### 0.2.1 — Conversation-first opening
 
 Added scene-setting, introductions and connected dialogue for all twelve testimony layers in both languages. Follow-up controls now appear only when you select a remark in the conversation.
+
+### 0.2.2 — Character voices
+
+Each witness now has a distinct conversational voice and a mood appropriate to the current layer. AI replies respond to the immediate question, including small talk, without automatically reciting the case. Only the current mood is sent to the model; later revelations stay hidden. Evidence and progression remain deterministic. Korean authored follow-ups have also been rewritten in spoken language.

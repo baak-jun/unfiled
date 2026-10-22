@@ -14,7 +14,7 @@ test('English cases preserve every puzzle gate and finish without untranslated t
  const g=game.createGame('detective',c);assert.equal(game.snapshot(g,demo).testimony,undefined);game.begin(g);english(game.snapshot(g,demo));english(game.detectiveContext(g));
  for(const [index,s]of c.stages.entries()){
  assert.equal(s.lie,koreanCases[i].stages[index].lie);assert.equal(s.foundBy,koreanCases[i].stages[index].foundBy);
- const before=JSON.stringify(game.snapshot(g,demo));
+ const before=JSON.stringify(game.snapshot(g,demo)),context=game.detectiveContext(g);assert.ok(context.includes(g.story.narrative.moods[index]));for(const futureMood of g.story.narrative.moods.slice(index+1))assert.ok(!context.includes(futureMood));
  for(const future of c.stages.slice(index+1))assert.ok(!before.includes(future.reveal));
  const spoken=g.messages.findLast(m=>m.testimonyStage===index);assert.ok(spoken);for(const statement of s.statements)assert.equal(spoken.text.split(statement.text).length-1,1);
  game.hint(g,index);game.press(g,index,s.foundBy);assert.equal(game.challenge(g,index,s.lie,'initial'),false);
