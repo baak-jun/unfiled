@@ -4,16 +4,18 @@ import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {cases} from './cases.mjs';
 import {objects,answers,knownObjectAnswer,parseObjectAnswer,isObjectGuess} from './objects.mjs';
-import {createGame,snapshot,press,challenge,guessObject,detectiveContext} from './game.mjs';
+import {createGame,begin,snapshot,press,challenge,guessObject,detectiveContext} from './game.mjs';
 const demo={key:'',name:'Demo'};
 
 test('all cases require sequential contradictions, found evidence and fresh stage',()=>{
  for(const story of cases){
  const g=createGame('detective',story);
+ assert.equal(snapshot(g,demo).testimony,undefined);assert.throws(()=>press(g,0,'s0'));begin(g);assert.throws(()=>begin(g));
  assert.equal(snapshot(g,demo).ending,undefined);
  assert.equal(snapshot(g,demo).stages,undefined);
  for(let index=0;index<story.stages.length;index++){
  const stage=story.stages[index],before=snapshot(g,demo);
+ const spoken=g.messages.findLast(m=>m.testimonyStage===index);assert.ok(spoken);for(const statement of stage.statements)assert.equal(spoken.text.split(statement.text).length-1,1);
  assert.equal(before.testimony.statements.length,3);assert.ok(before.testimony.statements.every(s=>!('press'in s)&&!('lie'in s)));
  assert.throws(()=>press(g,index+1,stage.foundBy));
  assert.throws(()=>challenge(g,index,stage.lie,stage.evidence.id));
@@ -52,11 +54,12 @@ test('object and detective actions cannot cross mode boundaries',()=>{
  assert.throws(()=>guessObject(createGame('detective',cases[0]),'우산'));
 });
 test('HTTP: full detective ending, restore, mode separation, object answers and restart',async()=>{
- const child=spawn(process.execPath,['server.mjs'],{env:{...process.env,PORT:'4174',RAON_API_KEY:'',AI_PROVIDER:'raon',AI_API_KEY:'',AI_MODEL:'',AI_BASE_URL:''},stdio:['ignore','pipe','pipe']});
- try{await Promise.race([once(child.stdout,'data'),new Promise((_,r)=>setTimeout(()=>r(Error('startup timeout')),5000).unref())]);
- const call=async(path,data)=>{const r=await fetch('http://127.0.0.1:4174/api/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});return {status:r.status,data:await r.json()};};
+ const child=spawn(process.execPath,['server.mjs'],{env:{...process.env,PORT:'0',RAON_API_KEY:'',AI_PROVIDER:'raon',AI_API_KEY:'',AI_MODEL:'',AI_BASE_URL:''},stdio:['ignore','pipe','pipe']});
+ try{const [ready]=await Promise.race([once(child.stdout,'data'),new Promise((_,r)=>setTimeout(()=>r(Error('startup timeout')),5000).unref())]);
+ const base=ready.toString().match(/http:\/\/127\.0\.0\.1:\d+/)[0];
+ const call=async(path,data)=>{const r=await fetch(base+'/api/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});return {status:r.status,data:await r.json()};};
  let {data:g}=await call('start',{gameType:'detective'});const id=g.id,story=cases.find(c=>c.id===g.caseNumber);
- assert.equal(g.mode,'demo');assert.equal((await fetch('http://127.0.0.1:4174/.env')).status,404);
+ assert.equal(g.mode,'demo');assert.equal((await fetch(base+'/.env')).status,404);
  assert.equal((await call('chat',{id,text:''})).status,400);
  assert.equal((await call('start',{gameType:'wrong'})).status,400);
  ({data:g}=await call('chat',{id,text:'확실합니까?'}));assert.equal(g.stage,0);assert.equal(g.turns,1);
@@ -79,5 +82,5 @@ test('HTTP: full detective ending, restore, mode separation, object answers and 
  for(const target of objects){const result=await call('object-guess',{id:oid,text:target.name});if(result.data.complete){o=result.data;break;}}
  assert.equal(o.complete,true);assert.match(o.ending,/정답은/);
  const next=await call('start',{gameType:'object',previousId:oid});assert.equal(next.data.complete,false);assert.equal((await call('state',{id:oid})).status,404);
- }finally{const closed=once(child,'exit');child.kill();await closed;}
+ }finally{if(child.exitCode===null&&child.signalCode===null){const closed=once(child,'exit');child.kill();await closed;}}
 });

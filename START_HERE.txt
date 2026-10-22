@@ -1,5 +1,5 @@
 UNFILED — Interview Room 04
-Version 0.2.0 | English / Korean
+Version 0.2.1 | English / Korean
 
 1. Install Node.js 22.9 or later: https://nodejs.org
 2. Extract this whole ZIP to a folder.

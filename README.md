@@ -117,10 +117,14 @@ Raon 외 제공자는 콘솔에서 사용할 수 있는 **텍스트/채팅 모�
 
 공식 구현 근거 (2026-10-22 확인): [OpenAI Chat Completions](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create), [Gemini 호환 API](https://ai.google.dev/gemini-api/docs/openai/), [Claude Messages](https://platform.claude.com/docs/en/api/messages/create), [DeepSeek](https://api-docs.deepseek.com/).
 
-## English / itch.io (0.2.0)
+## English / itch.io (0.2.1)
 
 - English edition: http://127.0.0.1:4173/en/ (language switch in the header).
-- `npm run package:itch` builds `dist/unfiled-0.2.0-local.zip`, without API keys.
+- `npm run package:itch` builds `dist/unfiled-0.2.1-local.zip`, without API keys.
 - Upload as a downloadable project, not an HTML5 embed. Node.js 22.9+ is required.
 - English page copy and upload steps: `ITCH_PAGE_EN.md`. Launch instructions: `START_HERE.txt`.
 - Regenerate English interface assets with `npm run build:locales` after editing UI translations.
+
+## 0.2.1 — 대화 중심 도입
+
+사건을 맡게 된 배경 → 도착 장면 → 첫 인사 → 당시 이야기 순으로 진행합니다. 따로 나열하던 진술 목록은 없애고 대화 속 문장을 선택할 때만 더 묻기와 증거 대조가 나타납니다. 세 사건의 네 단계 모두 한국어·영어 연결 대사를 추가했습니다.

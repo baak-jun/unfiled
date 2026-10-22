@@ -25,3 +25,7 @@ Players expose four sequential layers of lies by pressing testimony and presenti
 ## Assets and limitations
 
 The interrogation-room SVG is original project artwork. No downloaded photos, brand marks, or source-site assets are redistributed. The three cases currently share this room illustration. The current case pool is authored and randomly selected, not AI-generated. Provider dialogue requires a local user-provided API key. Raon live dialogue was verified; other providers are mock-tested only.
+
+## Conversation-first interaction (0.2.1)
+
+Begin with assignment, scene and greeting. Present testimony as connected character dialogue. Selecting a spoken remark opens contextual follow-up and evidence actions below the transcript; no permanent statement checklist. Preserve the four-layer progress notebook.

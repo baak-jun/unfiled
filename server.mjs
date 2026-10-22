@@ -3,13 +3,13 @@ import {readFile} from 'node:fs/promises';
 import {randomInt} from 'node:crypto';
 import {cases} from './cases.mjs';
 import {objects,knownObjectAnswer,parseObjectAnswer} from './objects.mjs';
-import {GameError,createGame,snapshot,press,challenge,hint,guessObject,detectiveContext,cacheKey} from './game.mjs';
+import {GameError,createGame,begin,snapshot,press,challenge,hint,guessObject,detectiveContext,cacheKey} from './game.mjs';
 import {readConfig,complete} from './ai.mjs';
 import * as englishGame from './locales/en/game.mjs';
 import * as englishObjects from './locales/en/objects.mjs';
 import {cases as englishCases} from './locales/en/cases.mjs';
 import englishErrors from './locales/en/errors.json' with {type:'json'};
-const koreanGame={createGame,snapshot,press,challenge,hint,guessObject,detectiveContext};
+const koreanGame={createGame,begin,snapshot,press,challenge,hint,guessObject,detectiveContext};
 const engine=g=>g.lang==='en'?englishGame:koreanGame;
 const translate=text=>Object.entries(englishErrors).sort((a,b)=>b[0].length-a[0].length).reduce((value,[ko,en])=>value.replaceAll(ko,en),text);
 
@@ -70,9 +70,11 @@ const server=http.createServer(async(req,res)=>{
  if(g.busy)throw new GameError('진행 중인 답변을 기다리세요.',409);g.updated=Date.now();
  if(path==='/api/state')return send(res,200,view(g));
  if(g.complete)throw new GameError('이미 완료한 판입니다. 다음 판을 시작하세요.',409);
+ if(path==='/api/begin'){engine(g).begin(g);return send(res,200,view(g));}
  if(path==='/api/chat'){
  if(typeof body.text!=='string'||!body.text.trim()||body.text.length>600)throw new GameError('1~600자로 질문하세요.');
  if(g.turns>=60)throw new GameError('질문 60회를 사용했습니다. 증거 제시 또는 정답 제출은 계속할 수 있습니다.',429);
+ if(g.gameType==='detective'&&!g.begun){g.turns++;engine(g).begin(g,body.text.trim());return send(res,200,view(g));}
  g.busy=true;g.turns++;
  try{const result=await reply(g,body.text.trim());g.messages.push({role:'user',text:body.text.trim()},{role:'assistant',text:result.text});if(result.notice)g.messages.push({role:'system',text:result.notice});}finally{g.busy=false;}
  }else if(path==='/api/press'){engine(g).press(g,body.stage,body.statementId);}
@@ -84,4 +86,4 @@ const server=http.createServer(async(req,res)=>{
  }catch(error){if(!res.headersSent)send(res,error instanceof GameError?error.status:500,{error:lang==='en'?translate(error instanceof GameError?error.message:'잠시 문제가 생겼습니다. 다시 시도하세요.'):error instanceof GameError?error.message:'잠시 문제가 생겼습니다. 다시 시도하세요.'});else res.end();}
 });
 setInterval(()=>{for(const [id,g]of games)if(!g.busy&&Date.now()-g.updated>2*60*60*1000)games.delete(id);},60000).unref();
-server.listen(port,'127.0.0.1',()=>console.log(`미결 / 진술실 04: ${origin} (${ai.key?ai.name:'Demo'})`));
+server.listen(port,'127.0.0.1',()=>console.log(`미결 / 진술실 04: http://127.0.0.1:${server.address().port} (${ai.key?ai.name:'Demo'})`));

@@ -2,7 +2,7 @@
 
 A quiet room. A witness who keeps changing their story. One more lie beneath every admission.
 
-**Version 0.2.0 · English / 한국어 · Local web game**
+**Version 0.2.1 · English / 한국어 · Local web game**
 
 ## Start playing
 
@@ -23,7 +23,7 @@ The server binds only to this computer. This ZIP is a **downloadable local game*
 
 ## Two modes
 
-**Layers of Truth:** Three authored cases, each with four layers. Press individual statements to find evidence. Select a false statement and present the evidence that contradicts it. Each successful challenge reveals a new testimony and advances case progress by 25%. A partial admission may conceal another lie. Free conversation alone does not advance the case.
+**Layers of Truth:** Three authored cases, each with four layers. Read your assignment, meet the witness, then hear their account. Select a remark within the conversation and choose Ask about this to follow up and find evidence. Select a false statement and present the evidence that contradicts it. Each successful challenge reveals a new testimony and advances case progress by 25%. A partial admission may conceal another lie. Free conversation alone does not advance the case.
 
 **Object in Mind:** One of twelve fixed objects is selected per round. Ask about its features and submit one object name at a time. The witness replies only **Yes / No / I think so / I do not remember**. Uncertain replies are not proof. The object does not change during a round.
 
@@ -63,3 +63,7 @@ The cases, characters and evidence are fictional. This is a deduction game, not 
 Source and updates: https://github.com/baak-jun/unfiled
 
 Development checks: `npm test`. Regenerate English interface assets after editing translations with `npm run build:locales`. Build a key-free itch.io ZIP on Windows with `npm run package:itch`.
+
+### 0.2.1 — Conversation-first opening
+
+Added scene-setting, introductions and connected dialogue for all twelve testimony layers in both languages. Follow-up controls now appear only when you select a remark in the conversation.

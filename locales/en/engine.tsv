@@ -46,3 +46,7 @@ JSON 요청이 필요합니다.	A JSON request is required.
 1~600자로 질문하세요.	Ask a question between 1 and 600 characters.
 질문 60회를 사용했습니다. 증거 제시 또는 정답 제출은 계속할 수 있습니다.	You have used all 60 questions. You can still present evidence or submit an answer.
 잠시 문제가 생겼습니다. 다시 시도하세요.	Something went wrong. Please try again.
+이미 이야기를 시작했습니다.	The conversation has already begun.
+먼저 그날의 이야기를 들어보세요.	Hear their account before following up.
+“${statement.text}”라고 하셨죠. 조금 더 자세히 말씀해 주시겠어요?	You said, “${statement.text}” Could you tell me a little more about that?
+잠시 말이 끊긴다. 그는 앞서 했던 말을 고르듯 천천히 이야기를 잇는다.	A pause. The witness chooses their words carefully, then continues.

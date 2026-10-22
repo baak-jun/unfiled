@@ -40,7 +40,7 @@ All cases and characters are fictional. This is a mystery game, not psychologica
 ## Creator upload checklist (not part of page description)
 
 1. Create/edit the itch.io project with **Kind of project: Downloadable**. Do not mark this ZIP as an HTML5 browser game.
-2. Upload `dist/unfiled-0.2.0-local.zip`. Label it “UNFILED 0.2.0 — Local web edition (EN / KO, Node.js required)”.
+2. Upload `dist/unfiled-0.2.1-local.zip`. Label it “UNFILED 0.2.1 — Local web edition (EN / KO, Node.js required)”.
 3. Windows launcher is included. macOS/Linux terminal instructions are in README_EN.md; those platforms have not been runtime-tested for this release. Do not claim platform verification that has not been performed.
 4. Suggested genre: Puzzle. Suggested tags: mystery, detective, interactive-fiction, singleplayer, noir. Languages: English and Korean. Mark the release as an early prototype/in development.
 5. Use your tested screenshots as page images. The original room illustration is procedural SVG. Development, writing and translation were AI-assisted; describe AI use accurately in any current itch.io disclosure fields.
