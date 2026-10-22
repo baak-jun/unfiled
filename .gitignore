@@ -1,0 +1,6 @@
+.env
+.env.*
+!.env.example
+backups/
+*.tmp.html
+node_modules/
