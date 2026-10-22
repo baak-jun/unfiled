@@ -20,7 +20,7 @@ Source-derived direction: off-black, fog white, streetlamp yellow; hard light an
 
 ## Narrative contract
 
-Players uncover hidden actions, evidence locations, and concealment motives. NPCs are witnesses with fixed facts and evasive testimony. The final report reconstructs the evidence chain. There is no psychological diagnosis, counseling mode, empathy score, or self-reflection prompt.
+Players expose four sequential layers of lies by pressing testimony and presenting contradictory evidence. Only the active testimony and discovered documents are shown. Progress is proved layers, not a count of unrelated guesses. A separate object mode uses exactly four response phrases and a fixed hidden object; it shows question count rather than an invented confidence percentage. There is no psychological diagnosis, counseling mode, empathy score, or self-reflection prompt.
 
 ## Assets and limitations
 
