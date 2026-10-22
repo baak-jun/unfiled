@@ -1,0 +1,124 @@
+미결 — 진술실 04	UNFILED — Interview Room 04
+미결 홈	UNFILED home
+미결	UNFILED
+진술실 04	ROOM 04
+조사 지침 ↗	Field manual ↗
+모든 진술에는	Every statement
+또 다른 빈틈이 있다.	hides another lie.
+빈틈이 있다.	has a weakness.
+머릿속에 떠올린,	One object.
+그 사물은 무엇인가.	What is on their mind?
+네 가지 답변으로 범위를 좁혀라. 정답은 한 판 동안 바뀌지 않는다.	Four answers to narrow it down. One fixed object per round.
+시인했다고 끝이 아니다. 남겨 둔 거짓말을 증거로 벗겨내라.	An admission is not the end. Expose the lie it leaves behind.
+한 겹을 벗기면, 다른 거짓말이 드러난다.	Peel back one layer. Find another lie.
+추궁하고, 증거를 제시하고, 마지막 비밀까지.	Press. Present evidence. Uncover the final secret.
+시나리오 데모	Scripted demo
+API 키 설정 ↗	API setup ↗
+게임 모드	Game modes
+겹겹의 진실	Layers of Truth
+기억 속 사물	Object in Mind
+각 모드의 진행은 따로 유지됩니다.	Each mode keeps its own progress.
+사건 파일	Case file
+미해결	Unsolved
+미확인	Unknown
+블라인드 그림자가 드리운 빈 진술실과 증거 보관 봉투	An empty interview room with blind shadows and an evidence envelope
+사건 불러오는 중	Opening case
+참고인에게 질문	Ask the witness
+참고인 조사	Witness interview
+참고인	Witness
+최초 기록 / 01	INITIAL RECORD / 01
+확보한 증거	Collected evidence
+진술 기록 다시 보기	Review the transcript
+진술 기록	Transcript
+현재 증언	Current testimony
+현재 진술을 다시 설명해 주시겠습니까?	Would you explain your current statement again?
+그렇게 확신하는 근거는 무엇입니까?	What makes you so certain?
+지금도 같은 주장을 유지합니까?	Do you still stand by that statement?
+진술을 확인한다	Review statement
+근거를 묻는다	Ask for grounds
+다시 확인한다	Confirm account
+진술의 빈틈을 파고들 질문을 입력하세요.	Ask a question that probes the gaps in their story.
+현재 증언에 대해 질문하세요. 증거는 추궁으로 확보합니다.	Ask about the testimony. Use Press to obtain evidence.
+질문 보내기	Send question
+ENTER 전송 / SHIFT + ENTER 줄바꿈	ENTER send / SHIFT + ENTER new line
+추리 기록	Investigation notes
+거짓말을 증거로 무너뜨리면	Disprove a lie with evidence.
+다음 진술이 드러납니다.	A new testimony will follow.
+사건 해명도	Case progress
+떠오른 사물 이름	Your answer
+사물 하나를 입력하세요	Name one object
+정답 제출	Submit answer
+여러 이름을 한꺼번에 적으면 정답으로 인정하지 않습니다.	Submit one object at a time. Lists are not accepted.
+추가 단서 요청	Request a lead
+조사 방향 요청	Request a lead
+추측은 증거가 아니다.	A guess is not evidence.
+판단이 틀렸다면, 다시 질문하라.	If you were wrong, ask again.
+모든 사건과 인물은 허구입니다.	All characters and cases are fictional.
+로컬 데모	Local demo
+다른 사건 열기 ↗	Start a new round ↗
+닫기	Close
+진술을 그대로 믿지 마라.	Never take a statement at face value.
+ — 현재 증언의 문장을 하나씩 파고들어 추가 자료를 확보합니다.	 — Press individual statements to obtain more information and evidence.
+ — 모순된 문장을 선택하고 반박할 수 있는 증거를 제출합니다.	 — Select a contradictory statement and present evidence that disproves it.
+ — 일부를 시인한 증인이 또 다른 거짓말을 합니다. 네 겹을 모두 벗겨야 해결됩니다.	 — The witness admits part of the truth, then lies again. Expose all four layers to close the case.
+자유 대화에는 참말과 회피가 섞입니다. 진행 판정은 현재 증언과 확보한 증거로만 합니다. AI가 잘못 말하더라도 사건의 정답은 바뀌지 않습니다. 세 사건은 작성된 시나리오입니다.	Conversation mixes truths with evasions. Progress depends on the current testimony and collected evidence. The solution stays fixed even if the AI makes a mistake. All three cases are authored scenarios.
+기억 속 사물 모드에서는 맞다 / 아니다 / 그랬던 것 같다 / 기억이 나지 않는다만 답합니다. 정답은 고정되어 있고 이름은 별도의 정답 제출로 확인합니다. 데모에서 해석하지 못하는 질문은 기억이 나지 않는다로 답합니다.	In Object in Mind, replies are limited to Yes / No / I think so / I do not remember. The object stays fixed. Use the answer field to submit its name. In the demo, unrecognized questions receive I do not remember.
+조사 시작	Begin investigation
+이 진술과 양립할 수 없는 증거를 제시하십시오.	Present evidence that cannot be reconciled with this statement.
+없는 증거는 진술을 추궁해 확보하십시오. 오답은 단계를 낮추지 않습니다.	Press statements to find missing evidence. A wrong challenge does not erase progress.
+숨겨진 진실.	The hidden truth.
+증거 재구성	Case reconstruction
+기억 속 사물 모드로 →	Try Object in Mind →
+다음 사건 열기 →	Open the next case →
+내 API 키로 조사하기.	Bring your own API key.
+Windows에서는 프로젝트의 	On Windows, run 
+를 실행해 제공자·모델·키를 입력하고, 	 to choose a provider, model and key, then run 
+로 게임을 시작하세요.	 to start the game.
+직접 설정할 경우 프로젝트 최상위 	For manual setup, add the following settings to the 
+ 파일에 다음 항목을 넣습니다.	 file in the project folder.
+발급받은_키	YOUR_API_KEY
+키 변경 후 실행 중인 서버를 종료하고 다시 시작하세요. 키는 이 PC의 서버만 읽습니다. 브라우저나 GitHub에 공유하지 않습니다. AI 모드에서는 질문과 진술 기록 일부가 선택한 AI 제공자로 전송됩니다.	Restart the server after changing the key. It is read by the local server and is not included in browser files or GitHub. In AI mode, questions and part of the transcript are sent to your selected AI provider.
+지원: Raon / OpenAI / Gemini / Claude / DeepSeek / OpenAI 호환 API. 제공자별 사용 요금과 모델 접근 권한이 적용됩니다. API 설정을 바꾼 뒤 서버를 재시작하세요.	Supported: Raon / OpenAI / Gemini / Claude / DeepSeek / OpenAI-compatible APIs. Provider usage charges and model access requirements apply. Restart the server after changing API settings.
+연결을 확인하세요.	Check your connection.
+질문 기록	Question log
+ 모드	 mode
+질문 	Questions 
+AI 모드 · 질문 일부가 	AI mode · Some questions are sent to the 
+ API로 전송됩니다.	 API.
+데모 · 대화는 서버 메모리에만 임시 보관됩니다.	Demo · Transcripts are held temporarily in local server memory.
+완료	Complete
+증언 	Testimony 
+추궁 완료	Pressed
+추궁하기	Press
+증거 제시	Present evidence
+하나의 사물	ONE OBJECT
+진술 채록	TRANSCRIPT
+응답	Reply
+질문으로 특징을 좁히고 사물 이름을 제출하세요.	Narrow down its features, then submit the name.
+모순을 입증할 때마다 증인이 진술을 바꿉니다.	Prove a contradiction. Make the witness change their story.
+회 / 정답 제출 	 / Guesses 
+회 / Submit answer 	 / Guesses 
+회	
+불확실한 기억은 확정된 사실이 아닙니다. 같은 질문에는 같은 답을 유지합니다.	Uncertain memories are not facts. Repeated questions receive the same answer.
+봉인된 진실	Sealed truth
+추궁 → 증거 제시	Press → Present evidence
+앞선 모순을 먼저 입증하세요	Resolve the preceding contradiction
+추궁으로 증거를 찾고, 모순된 문장에 제시하세요. 자유 대화만으로는 단계가 열리지 않습니다.	Press to find evidence, then present it against a contradiction. Conversation alone does not unlock a layer.
+전기를 사용하는 물건인가요?	Does it use electricity?
+전기를 쓰나요?	Uses electricity?
+주머니에 들어가나요?	Does it fit in a pocket?
+학교에서 쓴 적이 있나요?	Have you used it at school?
+학교에서 쓰나요?	Used at school?
+예: 금속으로 된 물건인가요?	For example: Is it made of metal?
+사물을 찾았다.	Object identified.
+마지막 거짓말까지.	The final lie exposed.
+다른 사물 떠올리기 →	Think of another object →
+답변을 기다리는 중…	Waiting for a reply…
+기록을 불러오는 중…	Opening the records…
+이 모드의 현재 판을 닫고 새로 시작할까요?	End the current round in this mode and start again?
+새 진술	New testimony
+추궁	Press
+맞다	Yes
+아니다	No
+그랬던 것 같다	I think so
+기억이 나지 않는다	I do not remember

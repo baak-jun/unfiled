@@ -3,7 +3,7 @@ let state,busy=false,shownEnding=false,gameType='detective';
 const el=(tag,className,text)=>{const n=document.createElement(tag);if(className)n.className=className;if(text!==undefined)n.textContent=text;return n;};
 function storedId(type){try{return sessionStorage.getItem('unfiled-v2-'+type);}catch{return null;}}
 function saveId(type,id){try{sessionStorage.setItem('unfiled-v2-'+type,id);sessionStorage.setItem('unfiled-active-mode',type);}catch{}}
-async function api(route,data){const r=await fetch('/api/'+route,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const result=await r.json();if(!r.ok){const error=new Error(result.error||'연결을 확인하세요.');error.status=r.status;throw error;}return result;}
+async function api(route,data){const r=await fetch('/api/'+route,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lang:document.documentElement.lang,...data})});const result=await r.json();if(!r.ok){const error=new Error(result.error||'연결을 확인하세요.');error.status=r.status;throw error;}return result;}
 function lock(value){
  busy=value;document.querySelectorAll('button').forEach(b=>{if(!b.dataset.close&&b.id!=='help'&&b.id!=='key-help')b.disabled=value;});
  if(!value&&state){$('hint').disabled=state.hints===0||state.complete;$('send').disabled=state.complete;$('message').disabled=state.complete;document.querySelectorAll('[data-question],#object-form button').forEach(b=>b.disabled=state.complete);document.querySelectorAll('[data-already-pressed]').forEach(b=>b.disabled=true);}

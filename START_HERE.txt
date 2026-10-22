@@ -1,0 +1,20 @@
+UNFILED — Interview Room 04
+Version 0.2.0 | English / Korean
+
+1. Install Node.js 22.9 or later: https://nodejs.org
+2. Extract this whole ZIP to a folder.
+3. Windows: double-click start-en.cmd and keep the window open.
+4. Open http://127.0.0.1:4173/en/ in your browser.
+
+For Korean, use http://127.0.0.1:4173/ or the language link in the header.
+
+No API key or npm install is required for the scripted demo.
+For AI conversation, run setup-key.cmd and enter YOUR OWN key, then restart.
+Provider fees may apply. API credits are not included.
+Never share your .env file.
+
+This is a downloadable local game, NOT an HTML5 upload.
+Read README_EN.md for full instructions, limitations and macOS/Linux setup.
+Progress is temporary and resets when the server stops.
+
+Updates: https://github.com/baak-jun/unfiled

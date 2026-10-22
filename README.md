@@ -1,3 +1,5 @@
+English: [README_EN.md](README_EN.md) · [itch.io release notes](ITCH_PAGE_EN.md)
+
 # 미결 — 진술실 04
 
 참고인의 진술 속 빈틈을 파고들어 숨겨진 진실을 찾는 한국어 웹 추리 게임입니다. 증언을 추궁하고 증거로 모순을 반박해 네 겹의 진실을 밝혀내세요. 별도의 사물 맞히기 모드도 제공합니다.
@@ -114,3 +116,11 @@ Raon 외 제공자는 콘솔에서 사용할 수 있는 **텍스트/채팅 모�
 `AI_MAX_TOKENS`는 128~8192 사이이며 기본 2048입니다. 추론이 많은 모델에서 응답이 비면 늘릴 수 있습니다. 요청 타임아웃은 35초이고 자동 재시도는 하지 않습니다. 각 AI의 이용료·무료 한도는 별도입니다. 이 프로그램이 다른 AI까지 무료로 만들어 주지는 않습니다.
 
 공식 구현 근거 (2026-10-22 확인): [OpenAI Chat Completions](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create), [Gemini 호환 API](https://ai.google.dev/gemini-api/docs/openai/), [Claude Messages](https://platform.claude.com/docs/en/api/messages/create), [DeepSeek](https://api-docs.deepseek.com/).
+
+## English / itch.io (0.2.0)
+
+- English edition: http://127.0.0.1:4173/en/ (language switch in the header).
+- `npm run package:itch` builds `dist/unfiled-0.2.0-local.zip`, without API keys.
+- Upload as a downloadable project, not an HTML5 embed. Node.js 22.9+ is required.
+- English page copy and upload steps: `ITCH_PAGE_EN.md`. Launch instructions: `START_HERE.txt`.
+- Regenerate English interface assets with `npm run build:locales` after editing UI translations.
